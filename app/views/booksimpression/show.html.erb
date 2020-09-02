@@ -1,0 +1,28 @@
+
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %>error prohibited this book from being saved: <br>
+    <% @book.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<h4>Title</h4>
+<%= @book.title %>
+
+<h4>Body</h4>
+<%= @book.body %> <br>
+
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+
+<%= link_to "Back", books_path %>
+
+<!--<h4>Edit</h4>
+
+<h4>back</h4>
+
